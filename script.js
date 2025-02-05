@@ -51,21 +51,21 @@ document.addEventListener("DOMContentLoaded", function () {
     updateSwiper();
   }, 4000);
 });
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("modal");
   const modalImg = document.querySelector(".modal-content img");
-  const images = document.querySelectorAll(".img-modal"); // Все изображения с этим классом
+  const images = document.querySelectorAll(".img-modal"); 
   const closeBtn = document.querySelector(".close");
 
-  // Скрываем модальное окно при загрузке страницы
   modal.style.display = "none";
 
   if (modal && modalImg && closeBtn) {
-      // Добавляем обработчик клика для всех изображений с классом .img-modal
       images.forEach(img => {
           img.addEventListener("click", function () {
               modal.style.display = "flex";
-              modalImg.src = "./img/open-modal.png"; // Всегда открывает одно и то же изображение
+              modalImg.src = "./img/open-modal.png"; 
           });
       });
 
