@@ -258,6 +258,92 @@ header nav .contact-info span {
     justify-content: center;
 }
 
+/* swiper */
+/* Контейнер слайдера */
+.swiper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 10px;
+  }
+  
+  /* Обёртка слайдов */
+  .swiper-wrapper {
+    display: flex;
+    width: 100%; /* Количество слайдов * 100% */
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  /* Один слайд */
+  .swiper-slide {
+    flex: 0 0 100%;
+    text-align: center;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  /* Кнопки навигации */
+  .swiper-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    z-index: 10;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  
+  .swiper-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Пагинация */
+  .swiper-pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+  }
+  
+  .swiper-pagination span {
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .swiper-pagination .active {
+    background: #006400;
+    transform: scale(1.2);
+  }
+  
+
+
+/* modal */
 .info-block-modal {
     width: 1440px;
     height: 1267px;
@@ -268,6 +354,51 @@ header nav .contact-info span {
     width: 1440px;
     height: 1262px;
 }
+/* Стили для модального окна */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Контент модального окна */
+  .modal-content {
+    position: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Закрывающая кнопка */
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+  }
+  
+  /* Изображение в модальном окне */
+  .modal-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 5px;
+  }
+  
 
 
 .info-block-contact {
@@ -305,7 +436,7 @@ header nav .contact-info span {
     position: relative;
     display: flex;
     align-items: center;
-    border-bottom: 2px solid #fff; /* Линия вместо границы */
+    border-bottom: 2px solid #fff; 
     padding-bottom: 5px;
   }
   
@@ -346,25 +477,28 @@ header nav .contact-info span {
   .button {
     background: transparent;
     color: #f4f4f4;
-    font-size: 16px;
+    font-size: 24px;
     padding: 12px 20px;
     display: flex;
     align-items: center;
     gap: 10px;
     cursor: pointer;
     margin-top: 20px;
-    transition: 0.3s;
+    transition: transform 0.2s ease, color 0.2s ease;
+    border: none;
   }
-  
-  .button img {
-    width: 16px;
-    height: 16px;
-  }
-  
   .button:hover {
-    background: #f4f4f4;
-    color: #231F21;
+    transform: scale(1.1); /* Увеличиваем кнопку при наведении */
+}
+
+  .krug-imgs {
+    width: 80px;
+    margin: -57px;
+    margin-left: -25px;
+    margin-block: -15px;
   }
+  
+
 
   .footer {
     background-color: #d3d3d3; /* Цвет из скриншота */
@@ -389,9 +523,13 @@ header nav .contact-info span {
   .footer-title {
     font-size: 18px;
     font-weight: bold;
-    border-bottom: 2px solid #006400; /* Зеленая линия под заголовком */
     display: inline-block;
     padding-bottom: 5px;
+    font-family: Rubik;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.33px;
+    text-align: left;
   }
   
   .footer-list {
@@ -416,7 +554,8 @@ header nav .contact-info span {
   
   .footer-socials {
     display: flex;
-    gap: 15px;
+    gap: 22px;
+    flex-direction: column;
   }
   
   .footer-socials img {
@@ -428,4 +567,39 @@ header nav .contact-info span {
   .footer-socials a:hover img {
     transform: scale(1.1);
   }
-  
+  .inputs-footer {
+    color: #1F1F1F;
+  }
+  .input-group {
+    border-bottom: 2px solid #B3B3B3;
+  }
+  .lock-footer {
+    color: #1F1F1F;
+    font-style: italic;
+  }
+  .krug-img {
+    width: 80px;
+    margin: -57px;
+    margin-left: -25px;
+    margin-block: -15px;
+  }
+  .button-footer {
+    background: transparent;
+    color: black;
+    font-size: 24px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.2s ease, color 0.2s ease;
+    border: none;
+  }
+  .button-footer:hover {
+    transform: scale(1.1); 
+}
+  .footer-adress {
+    display: flex;
+    gap: 59px;
+  }
